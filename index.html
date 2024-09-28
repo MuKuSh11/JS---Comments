@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-comment">
+            <textarea id="comment-textarea" placeholder="Write a comment here..."></textarea>
+            <button id="comment-button">Comment</button>
+        </div>
+        <div class="comments-container">
+            <div class="comment">
+                <p>Some Comment here</p>
+                <div class="reply-container">
+                    <p>Reply 1 <button class="reply-delete-button">Delete Reply</button></p>
+                    <p>Reply 2 <button class="reply-delete-button">Delete Reply</button></p>
+                </div>
+                <textarea placeholder="Reply here..."></textarea>
+                <div class="comment-btn-container">
+                    <button class="reply-button">Reply</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

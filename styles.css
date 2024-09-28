@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    width: 10rem;
+    height: 3rem;
+    background-color: rgb(45, 170, 247);
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    width: 80vw;
+    height: auto;
+    margin: 1rem;
+    padding: 1rem;
+    margin-left: 10%;
+    background-color: rgb(245, 236, 224);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-comment {
+    width: 95%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.input-comment textarea {
+    width: 80%;
+    height: 5rem;
+    padding: 1rem;
+    resize: none;
+}
+
+.input-comment button {
+    width: 8rem;
+    height: 3rem;
+    align-self: flex-end;
+    font-size: 1rem;
+}
+
+.comments-container {
+    width: 95%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid lightgray;
+    border-bottom: 3px solid lightgray;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.comment textarea {
+    width: 80%;
+    height: 2rem;
+    padding: 1rem;
+    resize: none;
+    margin-left: 1rem;
+}
+
+.comment-btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment button {
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.comment .delete-button {
+    background-color: red;
+}
+
+.reply-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid lightgray;
+    border-radius: 0.5rem;
+}
+
+.reply-container p {
+    width: 70%;
+}
+
+.reply-container button {
+    width: 5rem;
+    height: 1rem;
+    background-color: transparent;
+    color: red;
+    font-size: 0.8rem;
+}
