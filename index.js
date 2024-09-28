@@ -14,23 +14,26 @@ commentBtn.addEventListener("click", () => {
 
 commentContainer.addEventListener("click", (e) => {
     const clickedBtn = e.target;
-    const targetComment = clickedBtn.parentElement.parentElement;
+    const targetCommentOrReply = clickedBtn.parentElement.parentElement;
     if( clickedBtn.classList.contains("reply-button") ) {
-        addReply(targetComment);
+        const replyTextArea = clickedBtn.parentElement.previousElementSibling;
+        const replyValue = replyTextArea.value.trim();
+        replyTextArea.value = "";
+        if( replyValue ) {
+            addReply(replyValue, targetCommentOrReply)
+        }
     } else if ( clickedBtn.classList.contains("delete-button")) {
-        targetComment.remove();
-    } else if (clickedBtn.classList.contains("reply-delete-button")) {
-        clickedBtn.parentElement.remove();
+        targetCommentOrReply.remove();
     }
 });
 
+// Function to add comment in comments-container
 function addComment(commentValue) {
     const commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
     commentDiv.innerHTML = `
         <p>${commentValue}</p>
-        <div class="reply-container">
-        </div>
+        <div class="reply-container"></div>
         <textarea placeholder="Reply here..."></textarea>
         <div class="comment-btn-container">
             <button class="reply-button">Reply</button>
@@ -40,15 +43,18 @@ function addComment(commentValue) {
     commentContainer.appendChild(commentDiv);
 }
 
-function addReply(targetComment) {
-    const replyTextArea = targetComment.querySelector("textarea");
-    let replyValue = replyTextArea.value.trim();
-    replyTextArea.value = "";
-    if(replyValue) {
-        const replyTag = document.createElement("p");
-        replyTag.innerHTML = `
-            ${replyValue} <button class="reply-delete-button">Delete Reply</button>
-        `;
-        targetComment.querySelector(".reply-container").appendChild(replyTag);
-    }
+// Function to add all level replies in reply-container
+function addReply(replyValue, targetCommentOrReply) {
+    const replyDiv = document.createElement("div");
+    replyDiv.classList.add("reply")
+    replyDiv.innerHTML = `
+        <p>${replyValue}</p>
+        <div class="reply-container"></div>
+        <textarea placeholder="Reply here..."></textarea>
+        <div class="reply-btn-container">
+            <button class="reply-button">Reply</button>
+            <button class="delete-button">Delete</button>
+        </div>
+    `;
+    targetCommentOrReply.querySelector(".reply-container").appendChild(replyDiv);
 }
