@@ -17,13 +17,18 @@ commentContainer.addEventListener("click", (e) => {
     const targetCommentOrReply = clickedBtn.parentElement.parentElement;
     if( clickedBtn.classList.contains("reply-button") ) {
         const replyTextArea = clickedBtn.parentElement.previousElementSibling;
-        const replyValue = replyTextArea.value.trim();
-        replyTextArea.value = "";
-        if( replyValue ) {
-            addReply(replyValue, targetCommentOrReply)
+        console.log(replyTextArea.style.display);
+        if( !replyTextArea.style.display ) {
+            replyTextArea.style.display = 'inline-block';
+        } else {
+            const replyValue = replyTextArea.value.trim();
+            replyTextArea.value = "";
+            if( replyValue ) {
+                addReply(replyValue, targetCommentOrReply)
+            }
         }
     } else if ( clickedBtn.classList.contains("delete-button")) {
-        targetCommentOrReply.remove();
+            targetCommentOrReply.remove();
     }
 });
 

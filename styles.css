@@ -110,6 +110,7 @@ textarea {
 }
 
 .reply > textarea {
+    display: none;
     height: 2rem;
     padding: 0.5rem;
     resize: none;
