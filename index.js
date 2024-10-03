@@ -79,11 +79,9 @@ function addReply(replyValue, targetCommentOrReply) {
 
 function collapseReplySection(targetCommentOrReply, flag) {
     const replyContainer = targetCommentOrReply.querySelector(".reply-container");
-    if( replyContainer.hasChildNodes()) {
-        if( flag ) {
-            replyContainer.style.display = "none";
-        } else {
-            replyContainer.style.display = "flex";
-        }
+    if( flag ) {
+        replyContainer.style.display = "none";
+    } else {
+        replyContainer.style.display = "flex";
     }
 }
