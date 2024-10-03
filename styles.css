@@ -93,6 +93,16 @@ textarea {
     background-color: red;
 }
 
+.comment > .comment-btn-container > .collapse-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    align-self: center;
+    color: black;
+    background: transparent;
+}
+
 .reply-container {
     width: 95%;
     display: flex;
@@ -128,6 +138,10 @@ textarea {
 }
 
 .reply > .reply-btn-container > .delete-button {
-    background: none;
     color: red;
+}
+
+.reply > .reply-btn-container > .collapse-button {
+    padding: 0 0.5rem;
+    color: black;
 }
