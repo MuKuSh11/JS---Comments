@@ -26,6 +26,7 @@ commentContainer.addEventListener("click", (e) => {
             if( replyValue ) {
                 addReply(replyValue, targetCommentOrReply)
             }
+            replyTextArea.style.display = '';
         }
     } else if ( clickedBtn.classList.contains("delete-button")) {
             targetCommentOrReply.remove();

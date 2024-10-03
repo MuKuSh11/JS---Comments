@@ -72,6 +72,7 @@ textarea {
 }
 
 .comment > textarea {
+    display: none;
     height: 3rem;
     padding: 1rem;
     resize: none;
